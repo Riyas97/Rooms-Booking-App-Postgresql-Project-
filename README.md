@@ -109,3 +109,14 @@ The objective of the project is to develop a database application using PostgreS
     - Employee ID
 
     The employee ID is the ID of the manager that is approving the booking. If the approval is allowed (see the conditions necessary for this in `Project Description.pdf` document), the routine will process the approval.
+    
+- `declare_health`: This routine is used for daily declaration of temperature. The inputs to the routine are:
+    - Employee ID
+    - Date
+    - Temperature
+
+- `contact_tracing`: This routine is used for contact tracing. The inputs to the routine are:
+    - Employee ID
+
+    First, if the employee is not having a fever, then nothing happens. Otherwise, contact tracing is performed accordingly (see the necessary steps for this in `Project Description.pdf` document). The routine returns a table containing all employee ID that are in close contact with the given employee ID. The table returned include the following columns:
+        - Employee ID
