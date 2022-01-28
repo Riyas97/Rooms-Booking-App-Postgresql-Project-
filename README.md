@@ -44,3 +44,71 @@ The objective of the project is to develop a database application using PostgreS
     - Date (i.e., the last day of work, assumed to be in the past or today)
     
     **Note:** All past records should be kept intact while all future records should be removed in accordance with the project specification.
+
+- `search_room`: This routine is used to search for available rooms. The inputs to the routine are:
+    - Capacity
+    - Date
+    - Start hour
+    - End hour
+
+    The routine returns a table containing all meeting rooms that are available from the start hour (inclusive) to the end
+    hour (exclusive). In other words, [start hour, end hour). The table returned includes:
+    - Floor number
+    - Room number
+    - Department ID
+    - Capacity
+    
+    The table is also sorted in ascending order of capacity (i.e., we do not want people to hog larger rooms first).
+
+- book_room: This routine is used to book a given room. The inputs to the routine should minimally include:
+Floor number
+Room number
+Date
+Start hour
+End hour
+Employee ID
+The employee ID is the ID of the employee that is booking the room. If the booking is allowed (see the conditions
+necessary for this in Application), the routine will process the booking for people to join and for approval.
+3. unbook_room: This routine is used to remove booking of a given room. The inputs to the routine should minimally
+include:
+Floor number
+Room number
+Date
+Start hour
+End hour
+Employee ID
+The employee ID is the ID of the employee that is asking to remove the booking. If this is not the employee doing
+the booking, the employee is not allowed to remove booking (the no sabotage rule). If the booking is already
+approved, also remove the approval. If there are already employees joining the meeting, also remove them from
+the respective tables.
+4. join_meeting: This routine is used to join a booked meeting room. The inputs to the routine should minimally
+include:
+Floor number
+Room number
+Date
+Start hour
+End hour
+Employee ID
+The employee ID is the ID of the employee that is joining the booked meeting room. If the employee is allowed to
+join (see the conditions necessary for this in Application), the routine will process the join. Since an approved meeting
+cannot have a change in participants, the employee is not allowed to join an approved meeting.
+5. leave_meeting: This routine is used to leave a booked meeting room. The inputs to the routine should minimally
+include:
+Floor number
+Room number
+Date
+Start hour
+End hour
+Employee ID
+The employee ID is the ID of the employee that is asking to leave the meeting. If this employee is not the meeting
+in the first place, then do nothing. Otherwise, process the leave. Since an approved meeting cannot have a change
+in participants, the employee is not allowed to leave an approved meeting.
+6. approve_meeting: This routine is used to approve a booking. The inputs to the routine should minimally include:
+Floor number
+Room number
+Date
+Start hour
+End hour
+Employee ID
+The employee ID is the ID of the manager that is approving the booking. If the approval is allowed (see the
+conditions necessary for this in Application), the routine will process the approval.
