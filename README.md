@@ -60,27 +60,26 @@ The objective of the project is to develop a database application using PostgreS
     
     The table is also sorted in ascending order of capacity (i.e., we do not want people to hog larger rooms first).
 
-- book_room: This routine is used to book a given room. The inputs to the routine should minimally include:
-Floor number
-Room number
-Date
-Start hour
-End hour
-Employee ID
-The employee ID is the ID of the employee that is booking the room. If the booking is allowed (see the conditions
-necessary for this in Application), the routine will process the booking for people to join and for approval.
-3. unbook_room: This routine is used to remove booking of a given room. The inputs to the routine should minimally
-include:
-Floor number
-Room number
-Date
-Start hour
-End hour
-Employee ID
-The employee ID is the ID of the employee that is asking to remove the booking. If this is not the employee doing
-the booking, the employee is not allowed to remove booking (the no sabotage rule). If the booking is already
-approved, also remove the approval. If there are already employees joining the meeting, also remove them from
-the respective tables.
+- `book_room`: This routine is used to book a given room. The inputs to the routine are:
+    - Floor number
+    - Room number
+    - Date
+    - Start hour
+    - End hour
+    - Employee ID
+
+    The employee ID is the ID of the employee that is booking the room. If the booking is allowed (see the conditions necessary for this in `Project     Description.pdf` document), the routine will process the booking for people to join and for approval.
+    
+- `unbook_room`: This routine is used to remove booking of a given room. The inputs to the routine are:
+    - Floor number
+    - Room number
+    - Date
+    - Start hour
+    - End hour
+    - Employee ID
+    
+    The employee ID is the ID of the employee that is asking to remove the booking. If this is not the employee doing the booking, the employee is not allowed to remove booking (the no sabotage rule). If the booking is already approved, also remove the approval. If there are already employees joining the meeting, also remove them from the respective tables.
+
 4. join_meeting: This routine is used to join a booked meeting room. The inputs to the routine should minimally
 include:
 Floor number
