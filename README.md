@@ -130,12 +130,13 @@ The objective of the project is to develop a database application using PostgreS
     - Employee ID
     - Number of days
     - Number of days is the number of days the employee did not declare their temperature within the given period. 
-    
+  
     The table is sorted in descending order of number of days.
     
 - `view_booking_report`: This routine is to be used by employee to find all meeting rooms that are booked by the employee. The inputs to the routine include:
     - Start date
     - Employee ID
+    
     The routine returns a table containing all meeting rooms that are booked by the given employee as well as its approval status from the given start date onwards. The table returned include the following columns:
     - Floor number
     - Room number
@@ -157,17 +158,15 @@ The objective of the project is to develop a database application using PostgreS
     
     The table should be sorted in ascending order of date and start hour.
     
-4. view_manager_report: This routine is to be used by manager to find all meeting rooms that require approval. The
-inputs to the routine should minimally include:
-Start date
-Employee ID
-If the employee ID does not belong to a manager, the routine returns an empty table. Otherwise, the routine
-returns a table containing all meeting that are booked but not yet approved from the given start date onwards.
-Note that the routine should only return all meeting in the room with the same department as the manager.
-The table returned should minimally include the following columns:
-Floor number
-Room number
-Date
-Start hour
-Employee ID
-The table should be sorted in ascending order of date and start hour.
+- `view_manager_report`: This routine is to be used by manager to find all meeting rooms that require approval. The inputs to the routine include:
+    - Start date
+    - Employee ID
+
+    If the employee ID does not belong to a manager, the routine returns an empty table. Otherwise, the routine returns a table containing all meeting that are booked but not yet approved from the given start date onwards. The table returned include the following columns:
+    - Floor number
+    - Room number
+    - Date
+    - Start hour
+    - Employee ID
+    
+    The table should be sorted in ascending order of date and start hour.
